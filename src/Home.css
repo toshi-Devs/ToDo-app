@@ -1,0 +1,48 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    margin: 20px;
+    border: 1px solid #00050e;
+    padding: 1.5rem;
+    max-width: 32rem;
+}
+
+form > .todo-input {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #25273C;
+    border-radius: 5px;
+}
+
+form > .todo-input > .circle-icon {
+    margin-right: 5px;
+    color: #828282;
+}
+
+form > .todo-input > input {
+    border: none;
+    outline: none;
+    flex: 1;
+    background-color: #25273C;
+    color: #B6B8CF;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.todo-list {
+    display: flex;
+    background-color: #25273C;
+    margin-top: 5px;
+    width: 100%;
+}
