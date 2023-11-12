@@ -15,13 +15,10 @@ function Home() {
     todo.trim() === '' ? alert('Please enter a todo') :
     addTodo(todo);
     setTodo('');
-    console.log(todo);
-
  } 
 
  const addTodo = todo => {
     setTodos([...todos, {id: Date.now(), text: todo, completed: false}]);
-    console.log(todos);
   }
 
   const toggleComplete = (id) => { 
@@ -37,6 +34,10 @@ function Home() {
       })
     )
   }
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  }
+
 
   return (
     <div className='home'>
@@ -51,9 +52,15 @@ function Home() {
             </div>
             <div className='todo-list'>
               {todos.map((todo, index) => (
-                <TodoList task={todo} key={index} toggleComplete={toggleComplete}/>
+                <TodoList task={todo} key={index} 
+                toggleComplete={toggleComplete} 
+                deleteTodo={deleteTodo}/>
               ))}      
+            </div>
             
+            <div className='todo-footer'>
+              <p>{todos.length} items left</p>
+              <p>Clear Completed</p>
             </div>
           </form>
         
