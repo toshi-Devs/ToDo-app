@@ -38,6 +38,10 @@ function Home() {
     setTodos(todos.filter((todo) => todo.id !== id));
   }
 
+  const clearCompleted = () => {
+    setTodos(todos.filter((todo) => !todo.completed));
+  }
+
 
   return (
     <div className='home'>
@@ -59,8 +63,8 @@ function Home() {
             </div>
             
             <div className='todo-footer'>
-              <p>{todos.length} items left</p>
-              <p>Clear Completed</p>
+              <p>{todos.length} items left </p>
+              <p onClick={clearCompleted}> Clear Completed</p>
             </div>
           </form>
         
