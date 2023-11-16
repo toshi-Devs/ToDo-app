@@ -3,12 +3,14 @@ import './Home.css';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import { useState } from 'react';
 import TodoList from './TodoList';
+import useLocalStorage from './hooks/useLocalStorage';
+
 
 
 function Home() {
 
   const [todo, setTodo] = useState(''); // 'Take the dog for a walk'
-  const [todos, setTodos] = useState([]); // [ {todo}, {todo}, {todo} ]
+  const [todos, setTodos] = useLocalStorage('react-todo.todos', []); // [ {todo}, {todo}, {todo} ]
 
  const handleSubmit = (e) => {
     e.preventDefault();
