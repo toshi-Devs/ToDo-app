@@ -47,6 +47,7 @@ form > .todo-input > input {
 
 .todo-footer {
     display: flex;
+    justify-content: space-evenly;
     margin-top: 5px;
     color: #B6B8CF;
 }

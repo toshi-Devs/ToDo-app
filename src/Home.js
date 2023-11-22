@@ -64,10 +64,11 @@ function Home() {
               ))}      
             </div>
             
-            <div className='todo-footer'>
-              <p>{todos.length} items left </p>
-              <p onClick={clearCompleted}> Clear Completed</p>
-            </div>
+              {todos.length > 0 && <div className='todo-footer'>
+                                    <p>{todos.length} items left</p>
+                                    <p onClick={clearCompleted}> Clear Completed</p>
+                                   </div>}
+              
           </form>
         
     </div>
