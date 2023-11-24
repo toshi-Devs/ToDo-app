@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react'
+import { React, useEffect } from 'react'
 import './Header.css'
 import useLocalStorage from './hooks/useLocalStorage';
 
@@ -25,7 +25,7 @@ function Header() {
         <div className='header-text'>
             <h1>TODO</h1>
             <button 
-            className='btn'
+            className='btn-theme'
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             aria-label={`Switch to ${theme === 'light' ?
              'dark' : 'light'} mode`}

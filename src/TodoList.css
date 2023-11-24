@@ -23,23 +23,12 @@
     cursor: pointer;
 }
 
-/* .list > .check-box {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+.list > .circle-icon-checked {
+    margin-left: 0;
+    margin-right: 5px;
+    color: #839df4;
     cursor: pointer;
 }
-
-.list > .check-box::after {
-    content: "";
-    display: none;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    color: turquoise;
-    background-color: #c5aeff;
-    margin: 5px;
-} */
 
 .completed {
     color: #c5aeff;
@@ -53,6 +42,7 @@ p {
        /* overflow-wrap: break-word; */
        cursor: pointer;
     }
+
 .delete-btn {
     margin-left: auto;
     cursor: pointer;

@@ -26,18 +26,11 @@
     color: white;
 }
 
-.btn {
+.btn-theme {
     max-width: fit-content;
   display: flex;
   place-items: center;
+  place-content: center;
   gap: 0.5em;
-  background-color: hsl(var(--accent));
-  color: hsl(var(--bg));
-  text-decoration: none;
-  padding: 0.5em;
-  border-radius: var(--_radius);
-  box-shadow: 0.05em 0.1em 0.9em hsl(var(--accent) / 0.3),
-    0 0 0 -0.1em hsl(var(--bg)), 0 0 0 -0.2em hsl(var(--accent));
-  transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish),
-    background-color var(--_tspeed_fast) var(--_ttype_squish);
+  background-color: transparent;
 }
