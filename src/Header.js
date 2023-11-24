@@ -1,14 +1,26 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import './Header.css'
+import useLocalStorage from './hooks/useLocalStorage';
 
 
 function Header() {
 
-    const [theme, setTheme] = useState('light'); // 'light' | 'dark'
+    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const [theme, setTheme] = useLocalStorage('react-todo.theme', defaultDark); // 'light' | 'dark'
+
+    const backgroundDark = './images/bg-desktop-dark.jpg';
+    const backgroundLight = './images/bg-desktop-light.jpg'
+
+    useEffect(() => {
+      document.documentElement.setAttribute('color-scheme', theme);}
+      , [theme])
     
 
   return (
-    <div className='header'>
+    <div 
+    className='header'
+    style ={{ backgroundImage: `url(${theme === 'dark' ? backgroundDark : backgroundLight})`}}
+    >
         
         <div className='header-text'>
             <h1>TODO</h1>
@@ -22,6 +34,7 @@ function Header() {
               <img src='./images/icon-sun.svg'/>
               : <img src='./images/icon-moon.svg'/>}
             </button>
+
             
         </div>
     </div>

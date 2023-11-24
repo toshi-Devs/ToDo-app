@@ -1,4 +1,4 @@
-import { React, useState} from 'react'
+import { React, useState, useEffect} from 'react'
 import styles from './ThemeSwitcher.module.css'
 import CloseIcon from '@mui/icons-material/Close';
 import ColorLensIcon from '@mui/icons-material/ColorLens';
@@ -6,6 +6,11 @@ import ColorLensIcon from '@mui/icons-material/ColorLens';
 const ThemeSwitcher = () => {
 
   const [isColorPicking, setIsColorPicking] = useState(false);
+  const [hue, setHue] = useState(40);
+
+  useEffect(() => { 
+    document.documentElement.style.setProperty('--hue', hue);
+  }, [hue])
 
   return (
     <div className={styles.wrapper}>
@@ -22,6 +27,9 @@ const ThemeSwitcher = () => {
           <input 
           className={styles.picker}
           type='range'
+          aria-label='change color theme slider'
+          value={hue}
+          onInput={(e) => setHue(e.target.value)}
 
           />
           </>
