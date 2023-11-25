@@ -6,7 +6,7 @@ import ColorLensIcon from '@mui/icons-material/ColorLens';
 const ThemeSwitcher = () => {
 
   const [isColorPicking, setIsColorPicking] = useState(false);
-  const [hue, setHue] = useState(40);
+  const [hue, setHue] = useState(200);
 
   useEffect(() => { 
     document.documentElement.style.setProperty('--hue', hue);
