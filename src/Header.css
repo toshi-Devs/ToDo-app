@@ -2,11 +2,31 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
-    height: 300px; /* Change this to 30-50% later */
-
-}
+    height: 300px;
+    background-color: hsl(var(--hue), 30%, 20%);
+  }
+  
+  .btn {
+    max-width: fit-content;
+    display: flex;
+    place-items: center;
+    gap: 0.5em;
+    background-color: hsl(var(--hue), 50%, 50%);
+    color: hsl(var(--hue), 80%, 90%);
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: var(--_radius);
+    box-shadow: 0.05em 0.1em 0.9em hsl(var(--hue), 50%, 30%);
+    transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish),
+      background-color var(--_tspeed_fast) var(--_ttype_squish);
+  }
+  
+  .btn:where(:active, :hover) {
+    background-color: hsl(var(--hue), 50%, 40%);
+    box-shadow: 0 0 0 hsl(var(--hue), 50%, 30%);
+  }
+  
 
 .header-text {
     display: flex;
