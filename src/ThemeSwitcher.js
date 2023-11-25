@@ -13,7 +13,12 @@ const ThemeSwitcher = () => {
   }, [hue])
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper}
+    style={{
+      backgroundColor: isColorPicking
+        ? 'hsl(var(--muted) / .6)'
+        : 'transparent'
+    }}>
       {
         isColorPicking 
         ? (
@@ -27,6 +32,8 @@ const ThemeSwitcher = () => {
           <input 
           className={styles.picker}
           type='range'
+          min="0"
+          max="360"
           aria-label='change color theme slider'
           value={hue}
           onInput={(e) => setHue(e.target.value)}
